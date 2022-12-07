@@ -1,0 +1,7 @@
+上传*.img.gz固件至root目录
+gzip -d *.img.gz
+mkdir op
+root_partition=$((`fdisk -l /root/*.img | grep .img2 | awk '{print $2}'` * 512))
+mount -o loop,offset=$root_partition /root/*.img /root/op
+cd op && tar zcf /var/lib/vz/template/cache/*.tar.gz * &&cd ..
+umount /root/op && rm -rf *.img
