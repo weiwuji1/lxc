@@ -1,6 +1,5 @@
 ### PVE宿主机下制作openwrt的LXC模板
 
-
 #### 第一步：
 
 上传`固件名称.img.gz`固件至root目录后gzip解压
