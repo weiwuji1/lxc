@@ -10,7 +10,7 @@ gzip -d 固件名称.img.gz
 
 #### 第二步：
 
-1、如果是`rootfs.img`固件需要按照下面的方式进行解压。
+1、如果是`rootfs.img`固件需要按照下面的方式进行解压
 
 ```
 apt install squashfs-tools #安装解压包：
