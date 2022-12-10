@@ -30,7 +30,7 @@ mount -o loop,offset=$root_partition /root/固件名称.img /root/op
 #### 第三步：
 
 ```
-cd op && tar zcf /var/lib/vz/template/cache/固件名称.tar.gz * &&cd ..  # `/var/lib/vz/template/cache/`为PVE中LXC模板路径
-umount /root/op && rm -rf *.img
+cd op && tar zcf /var/lib/vz/template/cache/固件名称.tar.gz * &&cd ..  # 打包至PVE中LXC模板路径
+umount /root/op && rm -rf 固件名称.img
 ```
 
