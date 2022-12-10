@@ -17,7 +17,7 @@ apt install squashfs-tools #安装解压包：
 unsquashfs 固件名称.img #解压
 ```
 
-解压完成后你在同级目录下会得到`squashfs-root`文件夹，然后进入该文件夹，跳至3步第三步进行打包
+解压完成后你在同级目录下会得到`squashfs-root`文件夹，然后进入该文件夹，跳至第三步进行打包
 
 2、其它固件则需要通过挂载镜像，得到内部文件：
 
@@ -29,6 +29,7 @@ mount -o loop,offset=$root_partition /root/固件名称.img /root/op
 
 #### 第三步：
 
+打包固件，弹出挂载，删除`.img`固件
 ```
 cd op && tar zcf /var/lib/vz/template/cache/固件名称.tar.gz * &&cd ..  # 打包至PVE中LXC模板路径
 umount /root/op && rm -rf 固件名称.img
