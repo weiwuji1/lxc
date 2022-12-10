@@ -2,7 +2,7 @@
 
 #### 第一步：
 
-上传`*.img.gz`固件至root目录后解压
+上传`*.img.gz`固件至root目录后gzip解压
 
 ```
 gzip -d *.img.gz
