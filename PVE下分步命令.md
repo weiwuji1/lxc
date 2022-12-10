@@ -1,4 +1,6 @@
-第一步：
+### PVE宿主机下制作openwrt的LXC模板
+
+#### 第一步：
 
 上传`*.img.gz`固件至root目录
 
@@ -6,7 +8,7 @@
 gzip -d *.img.gz
 ```
 
-第二步：
+#### 第二步：
 
 1、如果是`rootfs.img`固件需要按照下面的方式进行解压。
 
@@ -23,6 +25,11 @@ unsquashfs 固件路径.img #解压
 mkdir op
 root_partition=$((`fdisk -l /root/*.img | grep .img2 | awk '{print $2}'` * 512))
 mount -o loop,offset=$root_partition /root/*.img /root/op
+```
+
+#### 第三步：
+
+```
 cd op && tar zcf /var/lib/vz/template/cache/*.tar.gz * &&cd ..
 umount /root/op && rm -rf *.img
 ```
