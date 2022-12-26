@@ -1,5 +1,3 @@
-### PVE宿主机下制作openwrt的LXC模板
-
 #### 第一步：
 
 上传`固件名称.img.gz`固件至root目录后gzip解压
@@ -38,3 +36,13 @@ cd op && tar zcf /var/lib/vz/template/cache/固件名称.tar.gz * &&cd ..  # 打
 umount /root/op && rm -rf 固件名称.img
 ```
 
+#### 其它：
+
+如果要在lxc容器中使用tun/tap设备，需要在配置文件中添加：
+
+```
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+lxc.cgroup.devices.allow: c 10:200 rwm
+```
+
+配置文件路径为：`/etc/pve/lxc/虚拟机编号.conf`
